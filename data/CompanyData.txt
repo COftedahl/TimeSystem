@@ -1,0 +1,41 @@
+Company_XYZ
+103.02055944444444, $2272.4399238444444
+PayDay1: 5, PayDay2: 22
+Employees: 
+Richter, Joyce
+	82627062
+	20.08
+	_
+Smith, Bill
+	84484878
+	23.25
+	_
+Brown, Roger
+	80716135
+	14.17
+	_
+Hookes, Garth
+	81178877
+	30.12
+	_
+
+Current-
+Punches: 47
+12: KEYS: {84484878, 
+	82627062}; PUNCHES: {{Mon Sep 04 02:47:52 CDT 2023, Wed Sep 06 09:04:30 CDT 2023, 23.25, false}, 
+	{Wed Sep 06 09:04:30 CDT 2023, Mon Sep 04 19:29:42 CDT 2023, 20.08, false, 
+	Wed Sep 06 11:53:28 CDT 2023, Wed Sep 06 11:54:53 CDT 2023, 20.08, false}}
+38: KEYS: {80716135, 
+	81178877}; PUNCHES: {{Fri Sep 01 01:10:11 CDT 2023, Fri Sep 01 10:01:00 CDT 2023, 14.17, false, 
+	Sun Sep 03 07:45:24 CDT 2023, Sun Sep 03 15:38:09 CDT 2023, 14.17, false}, 
+	{Sat Sep 02 17:34:00 CDT 2023, Sun Sep 03 05:56:28 CDT 2023, 30.12, false}}
+
+
+Old-
+Punches: 47
+12: KEYS: {2627062}; PUNCHES: {{Wed Aug 09 10:11:11 CDT 2023, Wed Aug 09 12:11:11 CDT 2023, 23.25, false}}
+
+
+Hours: 2.0, Expense: $46.5
+
+End:;)},
