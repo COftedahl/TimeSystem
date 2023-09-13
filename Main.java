@@ -793,6 +793,11 @@ public class Main
     }
     private static void showCurrentEmployeesWindow()
     {
+        if ((c == null) || (c.getEmployees() == null) || (c.getEmployees().length < 1))
+        {
+            companyView();
+            return;
+        }
         JFrame frame = new JFrame();
         JLabel numEmployees = new JLabel();
         JButton nextEmployeeBTN = new JButton();
@@ -2312,35 +2317,39 @@ public class Main
         toPrint += "PayDay1: " + c.getPayDay1() + ", PayDay2: " + c.getPayDay2() + "\n";
         toPrint += "Employees: \n";
         Object[] employeeList = c.getEmployees();
-        for (int a = 0; a < employeeList.length; a += 1)
+        if (employeeList != null)
         {
-            if (((Employee)(employeeList[a])).getLast().equals(""))
+            for (int a = 0; a < employeeList.length; a += 1)
             {
-                toPrint += "_, ";
-            }
-            else
-            {
-                toPrint += ((Employee)(employeeList[a])).getLast() + ", ";
-            }
-            if (((Employee)(employeeList[a])).getFirst().equals(""))
-            {
-                toPrint += "_\n";
-            }
-            else
-            {
-                toPrint += ((Employee)(employeeList[a])).getFirst() + "\n";
-            }
-            toPrint += "\t" + ((Employee)(employeeList[a])).getID() + "\n";
-            toPrint += "\t" + ((Employee)(employeeList[a])).getWage() + "\n";
-            if (((Employee)(employeeList[a])).getMostRecentClockIn() == null)
-            {
-                toPrint += "\t_\n";
-            }
-            else
-            {
-                toPrint += "\t" + ((Employee)(employeeList[a])).getMostRecentClockIn() + "\n";
+                if (((Employee)(employeeList[a])).getLast().equals(""))
+                {
+                    toPrint += "_, ";
+                }
+                else
+                {
+                    toPrint += ((Employee)(employeeList[a])).getLast() + ", ";
+                }
+                if (((Employee)(employeeList[a])).getFirst().equals(""))
+                {
+                    toPrint += "_\n";
+                }
+                else
+                {
+                    toPrint += ((Employee)(employeeList[a])).getFirst() + "\n";
+                }
+                toPrint += "\t" + ((Employee)(employeeList[a])).getID() + "\n";
+                toPrint += "\t" + ((Employee)(employeeList[a])).getWage() + "\n";
+                if (((Employee)(employeeList[a])).getMostRecentClockIn() == null)
+                {
+                    toPrint += "\t_\n";
+                }
+                else
+                {
+                    toPrint += "\t" + ((Employee)(employeeList[a])).getMostRecentClockIn() + "\n";
+                }
             }
         }
+        
         toPrint += "\nCurrent-";
         toPrint += "\nPunches: " + c.getEmployeeTableSize() + "\n";
         toPrint += c.punchesToString();
