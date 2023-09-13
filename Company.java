@@ -69,7 +69,7 @@ public class Company
         {
             //employee is trying to clock in when they are still clocked in - 
                 //forgot to clock out
-            Punch newPunch = new Punch(employee.getMostRecentClockIn(), null, employee.getWage());
+            Punch newPunch = new Punch(employee.getMostRecentClockIn(), employee.getMostRecentClockIn(), employee.getWage());
             employeePunches.insert(newPunch, ID);
             employee.setMostRecentClockIn(null);
         }
@@ -78,9 +78,16 @@ public class Company
     public void punchOutEmployee(int ID, Date punchTimeOG)
     {
         Date punchTime = new Date();
-        punchTime.setTime(punchTimeOG.getTime());
+        if (punchTimeOG != null)
+        {
+            punchTime.setTime(punchTimeOG.getTime());
+        }
         Employee employee = getEmployee(ID);
         Punch newPunch = new Punch(employee.getMostRecentClockIn(), punchTime, employee.getWage());
+        if (newPunch.getTimeIn() == null)
+        {
+            newPunch.setTimeIn(punchTime);
+        }
         employeePunches.insert(newPunch, ID);
         if (employee.getMostRecentClockIn() != null)
         {
